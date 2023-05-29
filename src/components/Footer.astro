@@ -1,0 +1,34 @@
+---
+import '@fontsource-variable/nunito';
+---
+
+<footer class="flex flex-col justify-center items-center p-5 w-screen bg-accent-light/30 dark:bg-accent-dark/30">
+    <div class="flex gap-5">
+        <div class="flex items-center gap-2">
+            <p class="text-sm font-semibold text-accent-light dark:text-accent-dark">Site</p>
+            <a>Home</a>
+            <a>Projects</a>
+            <a>About me</a>
+            <a>Contact</a>
+        </div>
+        <div class="flex items-center gap-2">
+            <p class="text-sm font-semibold text-accent-light dark:text-accent-dark">Connect</p>
+            <a>LinkedIn</a>
+            <a>Dribbble</a>
+            <a>Email</a>
+        </div>
+    </div>
+    <hr class="w-1/3 rounded border-t-2 border-accent-light dark:border-accent-dark my-2" />
+    <p class="text-xs font-normal text-dark/50 dark:text-light/50">© 2023 <a class="text-dark/50 dark:text-light/50" href="mailto:mateusz.pasek@itsa.org.pl">Mateusz Pasek</a>. All rights reserved. </p>
+</footer>
+
+<style>
+    p,
+    a {
+        @apply font-nunito tracking-wide
+    }
+
+    a {
+        @apply text-xs font-medium text-dark dark:text-light
+    }
+</style>

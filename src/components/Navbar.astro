@@ -1,0 +1,42 @@
+---
+import ThemeIcon from "./ThemeIcon.astro";
+import '@fontsource/oxygen/700.css';
+import '@fontsource/oxygen/400.css';
+---
+
+<nav class="flex justify-between items-center font-oxygen w-3/4 mx-auto bg-light/30 dark:bg-dark/30">
+    <a href="/">
+        <div class="flex flex-col">
+            <h2 class="text-sm m-0 font-bold tracking-wider text-accent-light dark:text-accent-dark">Mateusz Pasek</h2>
+            <p class="small-text">Fullstack Designer</p>
+        </div>
+    </a>
+    <div class="flex gap-5 items-center ">
+        <a class="small-text" href="/projects">Projects</a>
+        <a class="small-text" href="/about">About me</a>
+        <a class="small-text" href="/contact">Contact</a>
+        <ThemeIcon />
+    </div>
+</nav>
+
+<script>
+    let currentPage = new URL(location).pathname;
+    console.log(currentPage);
+    let links = document.querySelectorAll('a');
+    links.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('highlight');
+        } else {
+            link.classList.remove('highlight');
+        }
+    });
+</script>
+
+<style>
+    .small-text {
+        @apply text-xs font-normal tracking-wider text-dark/80 dark:text-light/50
+    }
+    .highlight {
+        @apply font-bold text-accent-light dark:text-accent-dark
+    }
+</style>
