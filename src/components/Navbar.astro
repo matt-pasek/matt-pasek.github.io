@@ -4,23 +4,29 @@ import '@fontsource/oxygen/700.css';
 import '@fontsource/oxygen/400.css';
 ---
 
-<nav class="flex justify-between items-center font-oxygen w-3/4 mx-auto bg-light/30 dark:bg-dark/30">
-    <a href="/">
-        <div class="flex flex-col">
-            <h2 class="text-sm m-0 font-bold tracking-wider text-accent-light dark:text-accent-dark">Mateusz Pasek</h2>
-            <p class="small-text">Fullstack Designer</p>
+<nav class="fixed z-50 w-full pt-5">
+    <div class="flex justify-between items-center w-3/4 mx-auto font-oxygen bg-light/30 dark:bg-dark/30">
+        <a href="/">
+            <div class="flex flex-col">
+                <h2 class="text-sm m-0 font-bold tracking-wider text-accent-light dark:text-accent-dark">Mateusz Pasek</h2>
+                <p class="small-text">Fullstack Designer</p>
+            </div>
+        </a>
+        <div class="flex gap-5 items-center ">
+            <a class="small-text" href="/projects">Projects</a>
+            <a class="small-text" href="/about">About me</a>
+            <a class="small-text" href="/contact">Contact</a>
+            <ThemeIcon />
         </div>
-    </a>
-    <div class="flex gap-5 items-center ">
-        <a class="small-text" href="/projects">Projects</a>
-        <a class="small-text" href="/about">About me</a>
-        <a class="small-text" href="/contact">Contact</a>
-        <ThemeIcon />
     </div>
+
 </nav>
 
 <script>
-    let currentPage = new URL(location).pathname;
+    // I know this is not the best solution, but it works for now
+    // WebStorm currently has issues with this code, but it works
+    let currentPage = new URL(window.location as unknown as URL).pathname;
+
     console.log(currentPage);
     let links = document.querySelectorAll('a');
     links.forEach(link => {
