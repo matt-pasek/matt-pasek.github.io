@@ -1,11 +1,41 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import TxtButton from '../components/TextButton.astro';
+
+import { Image } from '@astrojs/image/components';
+import '@fontsource-variable/nunito';
+
+import profilePic from '../assets/mpasek.png';
+import dribbbleIcon from '../assets/icons/dribbble.svg';
+
 ---
 
 <Layout title="Mateusz Pasek | Full-stack Designer">
-
+    <div class="w-full h-screen flex items-center justify-center gap-20 px-40">
+        <div class="flex flex-col gap-3 w-2/3">
+            <h1 class="text-2xl text-color leading-tight">Hey! I'm <span class="font-medium text-accent-light dark:text-accent-dark">Matt</span>, a <br /> <span class="font-semibold">Fullstack Designer</span></h1>
+            <p class="text-sm text-color w-3/4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Ends with Where technology meets aesthethics.</p>
+            <div class="flex items-center gap-5">
+                <TxtButton text="CONTACT ME" href="/contact" />
+                <a href="https://dribbble.com"><button class="icon"><Image class="w-5 h-auto" src={dribbbleIcon} alt="dribbble" /></button></a>
+                <a href="https://dribbble.com"><button class="icon"><Image class="w-5 h-auto" src={dribbbleIcon} alt="dribbble" /></button></a>
+                <a href="https://dribbble.com"><button class="icon"><Image class="w-5 h-auto" src={dribbbleIcon} alt="dribbble" /></button></a> 
+            </div>
+            <div class="flex gap-2">
+                <!-- icon here -->
+                <p class="font-oxygen text-sm">UI/UX - WEB DEVELOPMENT - TEAM MANAGEMENT</p>
+            </div>
+        </div>
+        <Image src={ profilePic } alt="Mateusz's photo" class="h-auto w-1/3 rounded-full" />
+    </div>
 </Layout>
 
 <style>
+ .text-color {
+     @apply text-dark dark:text-light
+ }
 
+ .icon {
+     @apply border-2 border-accent-light/50 dark:border-accent-dark/50 p-3 rounded-full
+ }
 </style>
