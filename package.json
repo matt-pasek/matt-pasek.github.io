@@ -2,6 +2,7 @@
   "name": "wb-frontend",
   "type": "module",
   "version": "0.0.1",
+  "author": "Mateusz Pasek (matt-pasek)",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
