@@ -1,0 +1,27 @@
+---
+export interface props {
+    codename: string;
+    image: string;
+    positions: string[];
+    title: string;
+    description: string;
+    link: string | undefined;
+    technologies: string[];
+    full: boolean;
+}
+
+import Link from '../components/icons/Link.astro';
+import '@fontsource/oxygen/400.css';
+ 
+const {codename, image, positions, title, description, link, technologies, full } = Astro.props;
+---
+
+<div class="flex flex-col w-1/4 px-5 py-7">
+    <div class="flex justify-between">
+        <p class="w-2/3 font-oxygen text-accent">{positions.map((pos: string) => (<span>{pos.toUpperCase()} - </span>))}</p>
+        {link && <a href={link}><button class="icon"><Link /></button></a>}
+    </div>
+    <h3 class="font-nunito text-base font-semibold text-color">{title}</h3>
+    <p class="font-nunito text-xs text-color">{description}</p>
+    <a href="/" class="font-nunito font-semibold text-xs text-accent">Learn more</a>
+</div>
