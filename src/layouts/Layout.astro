@@ -26,5 +26,15 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
+ .icon {
+     @apply border-2 border-accent-light/50 dark:border-accent-dark/50 p-3 rounded-full
+ }
 
+ .text-color {
+     @apply text-dark dark:text-light
+ }
+
+ .text-accent {
+    @apply text-accent-light dark:text-accent-dark
+ }
 </style>
