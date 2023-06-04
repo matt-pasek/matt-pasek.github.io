@@ -59,31 +59,33 @@ import RecoCard from "../components/RecoCard.astro";
 ---
 
 <Layout title="Mateusz Pasek | Full-stack Designer">
-    <div class="w-full h-screen flex items-center justify-center gap-20 px-40">
-        <div class="flex flex-col gap-3 w-2/3">
-            <h1 class="text-2xl text-color leading-tight">Hey! I'm <span class="font-medium text-accent">Matt</span>, a <br /> <span class="font-semibold">Fullstack Designer</span></h1>
-            <p class="text-sm text-color w-3/4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Ends with Where technology meets aesthethics.</p>
-            <div class="flex items-center gap-5">
+    <div class="h-[100dvh] flex-col-reverse xl:flex-row flex items-center justify-center xl:gap-20 px-4 xl:px-40">
+        <div class="flex flex-col gap-3 w-full xl:w-2/3">
+            <h1 class="text-xl xl:text-2xl text-center xl:text-left text-color leading-tight">Hey! I'm <span class="font-medium text-accent">Matt</span>, a <br /> <span class="font-semibold">Fullstack Designer</span></h1>
+            <p class="text-sm text-color text-center xl:text-left xl:w-3/4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Ends with Where technology meets aesthethics.</p>
+            <div class="flex flex-col xl:flex-row items-center gap-5">
                 <TxtButton text="CONTACT ME" href="/contact" />
-                <a href="https://linkedin.com/in/m-pasek"><button class="icon"><LinkedinIcon /></button></a>
-                <a href="https://dribbble.com/matt-pasek"><button class="icon"><DribbbleIcon /></button></a>
-                <a href="https://showwcase.com/matt-pasek"><button class="icon"><ShowwcaseIcon /></button></a>
+                <div class="flex gap-5">
+                    <a href="https://linkedin.com/in/m-pasek"><button class="icon"><LinkedinIcon /></button></a>
+                    <a href="https://dribbble.com/matt-pasek"><button class="icon"><DribbbleIcon /></button></a>
+                    <a href="https://showwcase.com/matt-pasek"><button class="icon"><ShowwcaseIcon /></button></a>
+                </div>
             </div>
-            <div class="flex gap-2">
+            <div class="gap-2 hidden xl:flex">
                 <Arrow />
                 <p class="font-oxygen text-color leading-tight text-sm">UI/UX - WEB DEVELOPMENT - TEAM MANAGEMENT</p>
             </div>
         </div>
-        <Image src={ profilePic } alt="Mateusz's photo" class="h-auto w-1/3 rounded-full" />
+        <Image src={ profilePic } alt="Mateusz's photo" class="h-auto w-2/3 xl:w-1/3 rounded-full" />
     </div>
     <hr class="w-1/2 rounded-full border-t-[3px] border-accent-light dark:border-accent-dark mx-auto" />
-    <div class="flex items-center flex-col px-20 my-14">
+    <div class="flex items-center flex-col xl:px-20 my-14">
         <div class="flex w-full justify-between font-nunito">
             <div class="flex items-center gap-2">
                 <hr class="w-9 rounded-full border-t-[3px] border-accent-light dark:border-accent-dark"/>
                 <h2 class="font-semibold text-lg text-color">My recent <span class="text-accent">projects</span></h2>
             </div>
-            <div class="flex gap-10">
+            <div class="hidden xl:flex gap-10">
                 <div class="flex flex-col">
                     <p class="font-bold text-base text-accent">2+</p>
                     <p class="font-medium text-color">Projects completed</p>
@@ -98,17 +100,17 @@ import RecoCard from "../components/RecoCard.astro";
                 </div>
             </div>
         </div>
-        <div class="flex flex-wrap justify-center gap-10 px-20 pt-10">
+        <div class="flex flex-col xl:flex-row flex-wrap justify-center gap-10 px-5 xl:px-20 pt-10">
             {projects.slice(-3).map(project => <ProjectCard {...project} />)}
         </div>
         <TxtButton class="mx-auto" text="Explore all" href="/projects" />
     </div>
-    <div class="flex justify-between px-60 py-20 bg-accent-light/30 dark:bg-accent-dark/30">
-        <div class="flex flex-col gap-10 w-2/3 font-nunito">
-            <div class="flex flex-col gap-2 text-color">
+    <div class="flex justify-between flex-col-reverse gap-10 xl:gap-0 xl:flex-row px-5 xl:px-60 py-10 xl:py-20 bg-accent-light/30 dark:bg-accent-dark/30">
+        <div class="flex flex-col gap-10 xl:w-2/3 font-nunito">
+            <div class="flex flex-col items-center xl:items-start gap-2 text-color">
                 <p class="text-xs">01</p>
                 <h3 class="text-base font-semibold">UI/UX Design</h3>
-                <div class="flex gap-4">
+                <div class="flex gap-4 justify-center xl:justify-start flex-wrap">
                     <div class="flex items-center gap-1">
                         <Tick />
                         <p class="text-xs">Web Design</p>
@@ -123,10 +125,10 @@ import RecoCard from "../components/RecoCard.astro";
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col gap-2 text-color">
+            <div class="flex flex-col items-center xl:items-start gap-2 text-color">
                 <p class="text-xs">02</p>
                 <h3 class="text-base font-semibold">Development</h3>
-                <div class="flex gap-4">
+                <div class="flex gap-4 justify-center xl:justify-start flex-wrap">
                     <div class="flex items-center gap-1">
                         <Tick />
                         <p class="text-xs">Web Development</p>
@@ -138,13 +140,13 @@ import RecoCard from "../components/RecoCard.astro";
                 </div>
             </div>
         </div>
-        <div class="flex flex-col gap-5 items-end font-nunito text-color">
-            <h3 class="font-semibold text-xl text-right">Creating experience -<br /> from <span class="text-accent">design</span> to <span class="text-accent">implementation.</span></h3>
-            <p class="text-xs text-right w-3/4">I constantly seek to expand the boundaries of creativity in order to produce interesting, user-friendly, and memorable interactive experiences.</p>
+        <div class="flex flex-col gap-5 items-center xl:items-end font-nunito text-color">
+            <h3 class="font-semibold text-lg xl:text-xl text-center xl:text-right">Creating experience -<br /> from <span class="text-accent">design</span> to <span class="text-accent">implementation.</span></h3>
+            <p class="text-xs text-center xl:text-right xl:w-3/4">I constantly seek to expand the boundaries of creativity in order to produce interesting, user-friendly, and memorable interactive experiences.</p>
             <TextButton text="Learn more" href="/about" />
         </div>
     </div>
-     <div class="flex items-center flex-col px-20 my-14">
+     <div class="flex items-center flex-col xl:px-20 my-14">
         <div class="flex w-full justify-between font-nunito">
             <div class="flex items-center gap-2">
                 <hr class="w-9 rounded-full border-t-[3px] border-accent-light dark:border-accent-dark"/>
@@ -154,7 +156,7 @@ import RecoCard from "../components/RecoCard.astro";
                 <!-- controls -->
             </div>
         </div>
-        <div class="flex flex-wrap justify-center gap-10 px-20 pt-10">
+        <div class="flex flex-col xl:flex-row flex-wrap justify-center gap-10 px-20 pt-10">
             {recommendations.slice(-3).map(reco => <RecoCard {...reco} />)}
         </div>
     </div>
