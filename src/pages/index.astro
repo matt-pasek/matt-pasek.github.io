@@ -3,25 +3,32 @@ import Layout from '../layouts/Layout.astro';
 import TxtButton from '../components/TextButton.astro';
 import LinkedinIcon from '../components/icons/Linkedin.astro'
 import DribbbleIcon from '../components/icons/Dribbble.astro'
+import ShowwcaseIcon from '../components/icons/Showwcase.astro'
 import Arrow from '../components/icons/Arrow.astro'
+import Tick from '../components/icons/Tick.astro'
 import ProjectCard from '../components/ProjectCard.astro'
 
-// generate project informations based on this props, full is always false
-// codename: string;
-// image: string;
-//     positions: string[];
-//     title: string;
-//     description: string;
-//     link: string | undefined;
-//     technologies: string[];
-//     full: boolean;
+const recommendations = [
+    {
+        image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+        name: 'John Doe',
+        position: 'CEO at Company',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Ends with Where technology meets aesthethics.'
+    },
+    {
+        image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+        name: 'John Doe',
+        position: 'CEO at Company',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Ends with Where technology meets aesthethics.'
+    }
+]
 
 const projects = [
     {
         codename: 'project1',
-        image: '/assets/projects/1.webp',
+        imagesrc: 'https://images.unsplash.com/photo-1654157925394-4b7809721149?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1760&q=80',
         positions: ['UI/UX Designer', 'Frontend Developer'],
-        title: 'Project 1',
+        title: 'Project 0',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Ends with Where technology meets aesthethics.',
         link: 'https://google.com',
         technologies: ['React', 'TailwindCSS', 'Figma'],
@@ -46,6 +53,8 @@ import '@fontsource/oxygen/400.css';
 import '@fontsource/oxygen/700.css';
 
 import profilePic from '../assets/mpasek.png';
+import TextButton from "../components/TextButton.astro";
+import RecoCard from "../components/RecoCard.astro";
 
 ---
 
@@ -58,6 +67,7 @@ import profilePic from '../assets/mpasek.png';
                 <TxtButton text="CONTACT ME" href="/contact" />
                 <a href="https://linkedin.com/in/m-pasek"><button class="icon"><LinkedinIcon /></button></a>
                 <a href="https://dribbble.com/matt-pasek"><button class="icon"><DribbbleIcon /></button></a>
+                <a href="https://showwcase.com/matt-pasek"><button class="icon"><ShowwcaseIcon /></button></a>
             </div>
             <div class="flex gap-2">
                 <Arrow />
@@ -67,8 +77,8 @@ import profilePic from '../assets/mpasek.png';
         <Image src={ profilePic } alt="Mateusz's photo" class="h-auto w-1/3 rounded-full" />
     </div>
     <hr class="w-1/2 rounded-full border-t-[3px] border-accent-light dark:border-accent-dark mx-auto" />
-    <div class="flex flex-col px-20 my-14">
-        <div class="flex justify-between font-nunito">
+    <div class="flex items-center flex-col px-20 my-14">
+        <div class="flex w-full justify-between font-nunito">
             <div class="flex items-center gap-2">
                 <hr class="w-9 rounded-full border-t-[3px] border-accent-light dark:border-accent-dark"/>
                 <h2 class="font-semibold text-lg text-color">My recent <span class="text-accent">projects</span></h2>
@@ -89,9 +99,63 @@ import profilePic from '../assets/mpasek.png';
             </div>
         </div>
         <div class="flex flex-wrap justify-center gap-10 px-20 pt-10">
-            {projects.map(project => <ProjectCard {...project} />)}
-            {projects.map(project => <ProjectCard {...project} />)}
-            {projects.map(project => <ProjectCard {...project} />)}
+            {projects.slice(-3).map(project => <ProjectCard {...project} />)}
+        </div>
+        <TxtButton class="mx-auto" text="Explore all" href="/projects" />
+    </div>
+    <div class="flex justify-between px-60 py-20 bg-accent-light/30 dark:bg-accent-dark/30">
+        <div class="flex flex-col gap-10 w-2/3 font-nunito">
+            <div class="flex flex-col gap-2 text-color">
+                <p class="text-xs">01</p>
+                <h3 class="text-base font-semibold">UI/UX Design</h3>
+                <div class="flex gap-4">
+                    <div class="flex items-center gap-1">
+                        <Tick />
+                        <p class="text-xs">Web Design</p>
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <Tick />
+                        <p class="text-xs">App Design</p>
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <Tick />
+                        <p class="text-xs">Mobile Design</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col gap-2 text-color">
+                <p class="text-xs">02</p>
+                <h3 class="text-base font-semibold">Development</h3>
+                <div class="flex gap-4">
+                    <div class="flex items-center gap-1">
+                        <Tick />
+                        <p class="text-xs">Web Development</p>
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <Tick />
+                        <p class="text-xs">Mobile Development</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col gap-5 items-end font-nunito text-color">
+            <h3 class="font-semibold text-xl text-right">Creating experience -<br /> from <span class="text-accent">design</span> to <span class="text-accent">implementation.</span></h3>
+            <p class="text-xs text-right w-3/4">I constantly seek to expand the boundaries of creativity in order to produce interesting, user-friendly, and memorable interactive experiences.</p>
+            <TextButton text="Learn more" href="/about" />
+        </div>
+    </div>
+     <div class="flex items-center flex-col px-20 my-14">
+        <div class="flex w-full justify-between font-nunito">
+            <div class="flex items-center gap-2">
+                <hr class="w-9 rounded-full border-t-[3px] border-accent-light dark:border-accent-dark"/>
+                <h2 class="font-semibold text-lg text-color">Recommendations</h2>
+            </div>
+            <div class="flex gap-10">
+                <!-- controls -->
+            </div>
+        </div>
+        <div class="flex flex-wrap justify-center gap-10 px-20 pt-10">
+            {recommendations.slice(-3).map(reco => <RecoCard {...reco} />)}
         </div>
     </div>
 </Layout>
