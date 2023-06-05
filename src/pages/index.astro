@@ -1,10 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import TxtButton from '../components/TextButton.astro';
-import LinkedinIcon from '../components/icons/Linkedin.astro'
-import DribbbleIcon from '../components/icons/Dribbble.astro'
-import ShowwcaseIcon from '../components/icons/Showwcase.astro'
-import Arrow from '../components/icons/Arrow.astro'
 import Tick from '../components/icons/Tick.astro'
 import ProjectCard from '../components/ProjectCard.astro'
 
@@ -46,8 +42,6 @@ const projects = [
     }
 ]
 
-
-import { Image } from '@astrojs/image/components';
 import '@fontsource-variable/nunito';
 import '@fontsource/oxygen/400.css';
 import '@fontsource/oxygen/700.css';
@@ -55,29 +49,12 @@ import '@fontsource/oxygen/700.css';
 import profilePic from '../assets/mpasek.png';
 import TextButton from "../components/TextButton.astro";
 import RecoCard from "../components/RecoCard.astro";
+import HomeHero from "../components/HomeHero.astro";
 
 ---
 
 <Layout title="Mateusz Pasek | Full-stack Designer">
-    <div class="h-[100dvh] xl:h-screen flex-col-reverse xl:flex-row flex items-center justify-center xl:gap-20 px-4 xl:px-40">
-        <div class="flex flex-col gap-3 w-full xl:w-2/3">
-            <h1 class="text-xl xl:text-2xl text-center xl:text-left text-color leading-tight">Hey! I'm <span class="font-medium text-accent">Matt</span>, a <br /> <span class="font-semibold">Fullstack Designer</span></h1>
-            <p class="text-sm text-color text-center xl:text-left xl:w-3/4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Ends with Where technology meets aesthethics.</p>
-            <div class="flex flex-col xl:flex-row items-center gap-5">
-                <TxtButton text="CONTACT ME" href="/contact" />
-                <div class="flex gap-5">
-                    <a href="https://linkedin.com/in/m-pasek"><button class="icon"><LinkedinIcon /></button></a>
-                    <a href="https://dribbble.com/matt-pasek"><button class="icon"><DribbbleIcon /></button></a>
-                    <a href="https://showwcase.com/matt-pasek"><button class="icon"><ShowwcaseIcon /></button></a>
-                </div>
-            </div>
-            <div class="gap-2 hidden xl:flex">
-                <Arrow />
-                <p class="font-oxygen text-color leading-tight text-sm">UI/UX - WEB DEVELOPMENT - TEAM MANAGEMENT</p>
-            </div>
-        </div>
-        <Image src={ profilePic } alt="Mateusz's photo" class="h-auto w-2/3 xl:w-1/3 rounded-full" />
-    </div>
+    <HomeHero client:visible />
     <hr class="w-1/2 rounded-full border-t-[3px] border-accent-light dark:border-accent-dark mx-auto" />
     <div class="flex items-center flex-col xl:px-20 my-14">
         <div class="flex w-full justify-between font-nunito">

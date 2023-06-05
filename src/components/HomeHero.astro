@@ -1,0 +1,42 @@
+---
+import Typed from "typed.js";
+import { Image } from '@astrojs/image/components';
+
+import profilePic from "../assets/mpasek.png";
+
+import Arrow from "./icons/Arrow.astro";
+import TextButton from "./TextButton.astro";
+import Linkedin from "./icons/Linkedin.astro";
+import Showwcase from "./icons/Showwcase.astro";
+import Dribbble from "./icons/Dribbble.astro";
+
+---
+
+<div class="h-[100dvh] xl:h-screen flex-col-reverse xl:flex-row flex items-center justify-center xl:gap-20 px-4 xl:px-40">
+    <div class="flex flex-col gap-3 w-full xl:w-2/3">
+        <h1 class="text-xl xl:text-2xl text-center xl:text-left text-color leading-tight">Hey! I'm <span class="font-medium text-accent">Matt</span>, a <br /> <span id="change-text" class="font-semibold"></span></h1>
+        <p class="text-sm text-color text-center xl:text-left xl:w-3/4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Ends with Where technology meets aesthethics.</p>
+        <div class="flex flex-col xl:flex-row items-center gap-5">
+            <TextButton text="CONTACT ME" href="/contact" />
+            <div class="flex gap-5">
+                <a href="https://linkedin.com/in/m-pasek"><button class="icon"><Linkedin /></button></a>
+                <a href="https://dribbble.com/matt-pasek"><button class="icon"><Dribbble /></button></a>
+                <a href="https://showwcase.com/matt-pasek"><button class="icon"><Showwcase /></button></a>
+            </div>
+        </div>
+        <div class="gap-2 hidden xl:flex">
+            <Arrow />
+            <p class="font-oxygen text-color leading-tight text-sm">UI/UX - WEB DEVELOPMENT - TEAM MANAGEMENT</p>
+        </div>
+    </div>
+    <Image src={ profilePic } alt="Mateusz's photo" class="h-auto w-2/3 xl:w-1/3 rounded-full" />
+</div>
+
+
+<script>
+    import Typed from "typed.js";
+    var typed = new Typed('#change-text', {
+        strings: ['Frontend Developer', 'UI/UX Designer', 'Fullstack Designer'],
+        typeSpeed: 100,
+    });
+</script>
