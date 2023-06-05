@@ -1,8 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import TxtButton from '../components/TextButton.astro';
 import Tick from '../components/icons/Tick.astro'
-import ProjectCard from '../components/ProjectCard.astro'
 
 const recommendations = [
     {
@@ -48,13 +46,13 @@ import '@fontsource/oxygen/700.css';
 
 import TextButton from "../components/TextButton.astro";
 import RecoCard from "../components/RecoCard.astro";
-import HomeHero from "../components/homepage/Hero.astro";
+import Hero from "../components/homepage/Hero.astro";
 import Projects from "../components/homepage/Projects.astro";
 
 ---
 
 <Layout title="Mateusz Pasek | Full-stack Designer">
-    <HomeHero client:visible />
+    <Hero />
     <hr class="w-1/2 rounded-full border-t-[3px] border-accent-light dark:border-accent-dark mx-auto" />
     <Projects />
     <div class="flex justify-between flex-col-reverse gap-10 xl:gap-0 xl:flex-row px-5 xl:px-60 py-10 xl:py-20 bg-accent-light/30 dark:bg-accent-dark/30">
