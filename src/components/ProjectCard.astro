@@ -1,32 +1,27 @@
 ---
-export interface props {
-    codename: string;
-    image: string;
-    positions: string[];
-    title: string;
-    description: string;
-    link: string | undefined;
-    stack: string[];
-    full: boolean;
+import type { CollectionEntry } from 'astro:content';
+interface Props {
+  project: CollectionEntry<'projects'>;
+  full: boolean;
 }
 
 import Link from '../components/icons/Link.astro';
 import '@fontsource/oxygen/400.css';
  
-const {codename, imagesrc, positions, title, description, link, stack, full } = Astro.props;
+const { project, full } = Astro.props;
 ---
 
 <div class="flex flex-col xl:w-1/4 px-5 py-7">
-    <img src={imagesrc} alt={title} class="w-full h-52 object-cover object-center mb-5 rounded-xl" />
+    <img src={project.data.image} alt={project.data.title} class="w-full h-52 object-cover object-center mb-5 rounded-xl" />
     <div class="flex justify-between">
-        <p class="w-2/3 font-oxygen text-accent">{positions.join(' - ')}</p>
-        {link && <a href={link}><button class="icon"><Link /></button></a>}
+        <p class="w-2/3 font-oxygen text-accent">{project.data.positions.join(' - ')}</p>
+        {project.data.link && <a href={project.data.link}><button class="icon"><Link /></button></a>}
     </div>
-    <h3 class="font-nunito text-base font-semibold text-color">{title}</h3>
-    <p class="font-nunito text-xs text-color">{description}</p>
-    {!full && <a href=`/${codename}` class="font-nunito font-semibold text-xs text-accent">Learn more</a>}
+    <h3 class="font-nunito text-base font-semibold text-color">{project.data.title}</h3>
+    <p class="font-nunito text-xs text-color">{project.data.description}</p>
+    {!full && <a href=`/${project.data.codename}` class="font-nunito font-semibold text-xs text-accent">Learn more</a>}
     {full && <div class="flex flex-wrap mt-5">
-        {stack.map(tech => <p class="font-nunito text-xs text-accent mr-2">{tech}</p>)}
+        {project.data.stack.map(tech => <p class="font-nunito text-xs text-accent mr-2">{tech}</p>)}
     </div>
-    <a href=`/${codename}` class="font-nunito font-semibold text-xs text-accent">Learn more</a>}
+    <a href=`/${project.data.codename}` class="font-nunito font-semibold text-xs text-accent">Learn more</a>}
 </div>

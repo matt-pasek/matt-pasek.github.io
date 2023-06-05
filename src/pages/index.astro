@@ -46,42 +46,17 @@ import '@fontsource-variable/nunito';
 import '@fontsource/oxygen/400.css';
 import '@fontsource/oxygen/700.css';
 
-import profilePic from '../assets/mpasek.png';
 import TextButton from "../components/TextButton.astro";
 import RecoCard from "../components/RecoCard.astro";
-import HomeHero from "../components/HomeHero.astro";
+import HomeHero from "../components/homepage/Hero.astro";
+import Projects from "../components/homepage/Projects.astro";
 
 ---
 
 <Layout title="Mateusz Pasek | Full-stack Designer">
     <HomeHero client:visible />
     <hr class="w-1/2 rounded-full border-t-[3px] border-accent-light dark:border-accent-dark mx-auto" />
-    <div class="flex items-center flex-col xl:px-20 my-14">
-        <div class="flex w-full justify-between font-nunito">
-            <div class="flex items-center gap-2">
-                <hr class="w-9 rounded-full border-t-[3px] border-accent-light dark:border-accent-dark"/>
-                <h2 class="font-semibold text-lg text-color">My recent <span class="text-accent">projects</span></h2>
-            </div>
-            <div class="hidden xl:flex gap-10">
-                <div class="flex flex-col">
-                    <p class="font-bold text-base text-accent">2+</p>
-                    <p class="font-medium text-color">Projects completed</p>
-                </div>
-                <div class="flex flex-col">
-                    <p class="font-bold text-base text-accent">5</p>
-                    <p class="font-medium text-color">Design projects</p>
-                </div>
-                <div class="flex flex-col">
-                    <p class="font-bold text-base text-accent">1</p>
-                    <p class="font-medium text-color">Dev projects</p>
-                </div>
-            </div>
-        </div>
-        <div class="flex flex-col xl:flex-row flex-wrap justify-center gap-10 px-5 xl:px-20 pt-10">
-            {projects.slice(-3).map(project => <ProjectCard {...project} />)}
-        </div>
-        <TxtButton class="mx-auto" text="Explore all" href="/projects" />
-    </div>
+    <Projects />
     <div class="flex justify-between flex-col-reverse gap-10 xl:gap-0 xl:flex-row px-5 xl:px-60 py-10 xl:py-20 bg-accent-light/30 dark:bg-accent-dark/30">
         <div class="flex flex-col gap-10 xl:w-2/3 font-nunito">
             <div class="flex flex-col items-center xl:items-start gap-2 text-color">
