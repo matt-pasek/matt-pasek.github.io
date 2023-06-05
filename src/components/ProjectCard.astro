@@ -6,14 +6,14 @@ export interface props {
     title: string;
     description: string;
     link: string | undefined;
-    technologies: string[];
+    stack: string[];
     full: boolean;
 }
 
 import Link from '../components/icons/Link.astro';
 import '@fontsource/oxygen/400.css';
  
-const {codename, imagesrc, positions, title, description, link, technologies, full } = Astro.props;
+const {codename, imagesrc, positions, title, description, link, stack, full } = Astro.props;
 ---
 
 <div class="flex flex-col xl:w-1/4 px-5 py-7">
@@ -24,8 +24,9 @@ const {codename, imagesrc, positions, title, description, link, technologies, fu
     </div>
     <h3 class="font-nunito text-base font-semibold text-color">{title}</h3>
     <p class="font-nunito text-xs text-color">{description}</p>
-    <a href=`/${codename}` class="font-nunito font-semibold text-xs text-accent">Learn more</a>
+    {!full && <a href=`/${codename}` class="font-nunito font-semibold text-xs text-accent">Learn more</a>}
     {full && <div class="flex flex-wrap mt-5">
-        {technologies.map(tech => <p class="font-nunito text-xs text-accent mr-2">{tech}</p>)}
-    </div>}
+        {stack.map(tech => <p class="font-nunito text-xs text-accent mr-2">{tech}</p>)}
+    </div>
+    <a href=`/${codename}` class="font-nunito font-semibold text-xs text-accent">Learn more</a>}
 </div>
