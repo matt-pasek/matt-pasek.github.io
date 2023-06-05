@@ -1,0 +1,21 @@
+---
+import { getCollection } from "astro:content";
+import RecoCard from "../RecoCard.astro";
+
+const recommendations = await getCollection("recommendations");
+---
+
+<div class="flex items-center flex-col xl:px-20 my-14">
+    <div class="flex w-full justify-between font-nunito">
+        <div class="flex items-center gap-2">
+            <hr class="w-9 rounded-full border-t-[3px] border-accent-light dark:border-accent-dark"/>
+            <h2 class="font-semibold text-lg text-color">Recommendations</h2>
+        </div>
+        <div class="flex gap-10">
+            <!-- controls -->
+        </div>
+    </div>
+    <div class="w-full flex flex-col xl:flex-row flex-wrap justify-center gap-10 px-20 pt-10">
+        {recommendations.map(reco => <RecoCard reco={reco} />)}
+    </div>
+</div>

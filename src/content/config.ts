@@ -24,6 +24,6 @@ const recommendationsCollection = defineCollection({
 });
 
 export const collections = {
-    projects: projectsCollection,
-    recommendations: recommendationsCollection,
+    "projects": projectsCollection,
+    "recommendations": recommendationsCollection,
 }

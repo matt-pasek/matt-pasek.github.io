@@ -48,6 +48,7 @@ import TextButton from "../components/TextButton.astro";
 import RecoCard from "../components/RecoCard.astro";
 import Hero from "../components/homepage/Hero.astro";
 import Projects from "../components/homepage/Projects.astro";
+import Recoms from "../components/homepage/Recoms.astro";
 
 ---
 
@@ -96,20 +97,7 @@ import Projects from "../components/homepage/Projects.astro";
             <TextButton text="Learn more" href="/about" />
         </div>
     </div>
-     <div class="flex items-center flex-col xl:px-20 my-14">
-        <div class="flex w-full justify-between font-nunito">
-            <div class="flex items-center gap-2">
-                <hr class="w-9 rounded-full border-t-[3px] border-accent-light dark:border-accent-dark"/>
-                <h2 class="font-semibold text-lg text-color">Recommendations</h2>
-            </div>
-            <div class="flex gap-10">
-                <!-- controls -->
-            </div>
-        </div>
-        <div class="flex flex-col xl:flex-row flex-wrap justify-center gap-10 px-20 pt-10">
-            {recommendations.slice(-3).map(reco => <RecoCard {...reco} />)}
-        </div>
-    </div>
+    <Recoms />
 </Layout>
 
 <style>

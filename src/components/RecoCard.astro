@@ -1,23 +1,21 @@
 ---
-export interface props {
-    image: string;
-    name: string;
-    position: string;
-    text: string;
+import type { CollectionEntry } from 'astro:content';
+interface Props {
+  reco: CollectionEntry<'projects'>;
 }
 
 import '@fontsource-variable/nunito';
 
-const {image, name, position, text } = Astro.props;
+const { reco } = Astro.props;
 ---
 
-<div class="font-nunito xl:w-1/4 flex flex-col gap-3 px-10 py-5 text-color bg-accent-light/30 dark:bg-accent-dark/30 rounded-xl">
+<div class="font-nunito xl:w-max flex flex-col gap-3 px-5 py-5 text-color bg-accent-light/30 dark:bg-accent-dark/30 rounded-xl">
     <div class="flex gap-2 items-center">
-        <img src={image} alt={name} class="rounded-full h-16 object-cover w-auto aspect-square" />
+        <img src={reco.data.image} alt={reco.data.name} class="rounded-full h-16 object-cover w-auto aspect-square" />
         <div class="flex flex-col">
-            <p class="font-medium text-xs text-color">{name}</p>
-            <p class="text-tiny text-dark/60 dark:text-light/60">{position}</p>
+            <p class="font-medium text-xs text-color">{reco.data.name}</p>
+            <p class="text-tiny text-dark/60 dark:text-light/60">{reco.data.position}</p>
         </div>
     </div>
-    <p class="font-sm italic">{text}</p>
+    <p class="font-sm italic">{reco.data.text}</p>
 </div>

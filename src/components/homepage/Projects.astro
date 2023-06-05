@@ -27,8 +27,8 @@ const projects = await getCollection("projects");
             </div>
         </div>
     </div>
-    <div class="flex flex-col xl:flex-row flex-wrap justify-center gap-10 px-5 xl:px-20 pt-10">
-        {projects.slice(3).map(project => <ProjectCard {project} />)}
+    <div class="w-full flex flex-col xl:flex-row flex-wrap justify-center gap-10 px-5 xl:px-20 pt-10">
+        {projects.slice(0,3).map(project => <ProjectCard project={project} />)}
     </div>
     <TxtButton class="mx-auto" text="Explore all" href="/projects" />
 </div>

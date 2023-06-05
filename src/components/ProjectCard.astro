@@ -13,13 +13,13 @@ const { project, full } = Astro.props;
 
 <div class="flex flex-col xl:w-1/4 px-5 py-7">
     <img src={project.data.image} alt={project.data.title} class="w-full h-52 object-cover object-center mb-5 rounded-xl" />
-    <div class="flex justify-between">
+    <div class="flex items-center justify-between">
         <p class="w-2/3 font-oxygen text-accent">{project.data.positions.join(' - ')}</p>
         {project.data.link && <a href={project.data.link}><button class="icon"><Link /></button></a>}
     </div>
     <h3 class="font-nunito text-base font-semibold text-color">{project.data.title}</h3>
     <p class="font-nunito text-xs text-color">{project.data.description}</p>
-    {!full && <a href=`/${project.data.codename}` class="font-nunito font-semibold text-xs text-accent">Learn more</a>}
+    {!full && <a href=`/projects/${project.data.codename}` class="font-nunito font-semibold text-xs text-accent">Learn more</a>}
     {full && <div class="flex flex-wrap mt-5">
         {project.data.stack.map(tech => <p class="font-nunito text-xs text-accent mr-2">{tech}</p>)}
     </div>
