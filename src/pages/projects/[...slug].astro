@@ -16,6 +16,8 @@ const { Content } = await entry.render();
 <Layout title={entry.data.title}>
     <div class="w-full min-h-screen py-20 px-20">
         <SubHeader title={entry.data.title} description={entry.data.description} />
-        <Content />
+        <div class="text-color" id="content">
+            <Content />
+        </div>
     </div>
 </Layout>
