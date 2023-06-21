@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import SubHeader from "../../components/SubpageHeader.astro";
-import Layout from "../../layouts/Layout.astro";
+import Project from "../../layouts/Project.astro";
 
 export async function getStaticPaths() {
   const projectEntries = await getCollection("projects");
@@ -13,11 +12,6 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
-<Layout title={entry.data.title}>
-    <div class="w-full min-h-screen py-20 px-20">
-        <SubHeader title={entry.data.title} description={entry.data.description} />
-        <div class="text-color" id="content">
-            <Content />
-        </div>
-    </div>
-</Layout>
+<Project title={entry.data.title}>
+    <Content />
+</Project>
