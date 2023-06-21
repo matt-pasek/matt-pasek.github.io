@@ -8,10 +8,9 @@ const projects = await getCollection("projects");
 ---
 
 <Layout title="Portfolio | Mateusz Pasek">
-    <div class="flex flex-col min-h-screen py-20 px-10 xl:px-40">
+    <div class="flex flex-col min-h-[calc(100dvh-8rem)] xl:min-h-[calc(100vh-8rem)] py-9 px-10 xl:px-40">
         <SubpageHeader title="Projects" subtitle="my personal journey’s record" description="I constantly seek to expand the boundaries of creativity in order to produce interesting, user-friendly, and memorable interactive experiences." />
         <div class="flex flex-wrap px-20">
-            {projects.map(project => <ProjectCard project={project} />)}
             {projects.map(project => <ProjectCard project={project} />)}
         </div>
     </div>
