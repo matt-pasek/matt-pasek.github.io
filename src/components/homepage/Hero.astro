@@ -11,22 +11,22 @@ import Dribbble from "../icons/Dribbble.astro";
 import HeroTitle from "./HeroTitle.vue";
 ---
 
-<div class="h-[calc(100dvh-8rem)] xl:h-[calc(100vh-8rem)] flex-col-reverse xl:flex-row flex items-center justify-center xl:gap-20 px-4 xl:px-40">
-    <div class="flex flex-col gap-3 w-full xl:w-2/3">
+<div class="h-[calc(100dvh-8rem)] md:h-[calc(100vh-8rem)] flex-col-reverse md:flex-row flex items-center justify-center md:gap-20 px-4 md:px-40">
+    <div class="flex flex-col gap-3 w-full md:w-2/3">
         <HeroTitle client:visible />
-        <p class="text-sm text-color text-center xl:text-left xl:w-3/4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Ends with Where technology meets aesthethics.</p>
-        <div class="flex flex-row justify-center xl:justify-start items-center gap-5">
+        <p class="text-sm text-color text-center md:text-left md:w-3/4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Ends with Where technology meets aesthethics.</p>
+        <div class="flex flex-row justify-center md:justify-start items-center gap-5">
             <TextButton text="CONTACT ME" href="/contact" />
             <a href="https://linkedin.com/in/m-pasek"><button class="icon"><Linkedin /></button></a>
-            <a class="hidden xl:block" href="https://dribbble.com/matt-pasek"><button class="icon"><Dribbble /></button></a>
-            <a class="hidden xl:block" href="https://showwcase.com/matt-pasek"><button class="icon"><Showwcase /></button></a>
+            <a class="hidden md:block" href="https://dribbble.com/matt-pasek"><button class="icon"><Dribbble /></button></a>
+            <a class="hidden md:block" href="https://showwcase.com/matt-pasek"><button class="icon"><Showwcase /></button></a>
         </div>
-        <div class="gap-2 hidden xl:flex">
+        <div class="gap-2 hidden md:flex">
             <Arrow />
             <p class="font-oxygen text-color leading-tight text-sm">UI/UX - WEB DEVELOPMENT - TEAM MANAGEMENT</p>
         </div>
     </div>
-    <Image src={ profilePic } alt="Mateusz's photo" class="h-auto w-2/3 max-w-md xl:w-1/3 rounded-full" />
+    <Image src={ profilePic } alt="Mateusz's photo" class="h-auto w-2/3 max-w-md md:w-1/3 rounded-full" />
 </div>
 
 
