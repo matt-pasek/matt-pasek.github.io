@@ -1,0 +1,56 @@
+---
+import type { MDXLayoutProps } from "astro";
+import { ViewTransitions } from 'astro:transitions';
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+import '@fontsource/oxygen/700.css';
+import '@fontsource-variable/nunito';
+import SubpageHeader from "../components/SubpageHeader.astro";
+
+type Props = MDXLayoutProps<{
+  frontTitle: string;
+  title: string;
+  subtitle: string;
+  description: string;
+}>;
+
+const { frontmatter } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="author" content="Mateusz Pasek" />
+		<title>{frontmatter.frontTitle}</title>
+		<ViewTransitions />
+	</head>
+	<body class="bg-light dark:bg-dark scrollbar-thin scrollbar-thumb-rounded-md scrollbar-track-dark scrollbar-thumb-accent">
+		<Navbar />
+		<div class="flex flex-col items-center min-h-[calc(100dvh-8rem)] xl:min-h-[calc(100vh-8rem)] py-9 px-10 xl:px-20">
+			<SubpageHeader title={frontmatter.title} subtitle={frontmatter.subtitle} description={frontmatter.description} />
+			<article class="!max-w-full w-5/6 prosed mt-5">
+				<slot />
+			</article>
+		</div>
+		<Footer />
+	</body>
+</html>
+<style is:global>
+	.text-color {
+		@apply text-dark dark:text-light
+	}
+
+	.text-accent {
+		@apply text-accent-light dark:text-accent-dark
+	}
+
+	.prosed {
+		@apply /* headings */ prose prose-headings:font-oxygen prose-headings:text-base prose-headings:font-bold prose-headings:text-accent-light prose-headings:dark:text-accent-dark prose-headings:mb-2 /* paragraphs */ prose-p:font-oxygen prose-p:text-xs prose-p:text-light prose-p:dark:text-light prose-p:mt-0 prose-p:mb-5
+	}
+</style>

@@ -1,10 +1,19 @@
 ---
-layout: ../layouts/Layout.astro
+layout: ../layouts/Markdowned.astro
 frontTitle: About me | Mateusz Pasek
+title: About me
+subtitle: get to know me better
+description: I constantly seek to expand the boundaries of creativity in order to produce interesting, user-friendly, and memorable interactive experiences.
 ---
-import SubpageHeader from '../components/SubpageHeader.astro';
+import AboutComponent from '../components/AboutComponent.vue';
 
-<div className="text-color min-h-[calc(100dvh-8rem)] xl:min-h-[calc(100vh-8rem)] py-9 px-10 xl:px-20" id="content">
-  <SubpageHeader title="About me" subtitle="get to know me better" description="I constantly seek to expand the boundaries of creativity in order to produce interesting, user-friendly, and memorable interactive experiences." />
-  # Work in progress
-</div>
+# About me
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+<AboutComponent client:load />
+
+# My past... and my future
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+# Me and me and me
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
