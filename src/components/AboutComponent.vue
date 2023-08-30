@@ -15,5 +15,5 @@
 </template>
 
 <script setup lang="ts">
-import Card from "./AboutComponentCard.vue";
+import Card from './AboutComponentCard.vue';
 </script>
