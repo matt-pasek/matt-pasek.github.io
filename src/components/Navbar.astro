@@ -23,17 +23,21 @@ import '@fontsource/oxygen/400.css';
 </nav>
 
 <script>
-    let currentPage = new URL(window.location as unknown as URL).pathname;
+    function highlightCurrentPage() {
+        let currentPage = new URL(window.location as unknown as URL).pathname;
+        console.log(currentPage);
+        let links = document.querySelectorAll('a');
+        links.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('highlight');
+            } else {
+                link.classList.remove('highlight');
+            }
+        });
+    }
 
-    console.log(currentPage);
-    let links = document.querySelectorAll('a');
-    links.forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-            link.classList.add('highlight');
-        } else {
-            link.classList.remove('highlight');
-        }
-    });
+    highlightCurrentPage();
+    document.addEventListener('astro:after-swap', highlightCurrentPage)
 </script>
 
 <style>

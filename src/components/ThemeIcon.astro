@@ -8,7 +8,8 @@
 </button>
 
 <script>
-  const theme = (() => {
+  function checkTheme() {
+    const theme = (() => {
     if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
       return localStorage.getItem('theme');
     }
@@ -18,13 +19,17 @@
       return 'light';
   })();
 
-  if (theme === 'light') {
-    document.documentElement.classList.remove('dark');
-  } else {
-    document.documentElement.classList.add('dark');
-  }
+    if (theme === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
 
-  window.localStorage.setItem('theme', theme as string);
+    localStorage.setItem('theme', theme as string);
+  }
+  checkTheme();
+  document.addEventListener('astro:after-swap', checkTheme)
+
 
   const handleToggleClick = () => {
     const element = document.documentElement;
