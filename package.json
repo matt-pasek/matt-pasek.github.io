@@ -18,6 +18,7 @@
     "@fontsource/oxygen": "^5.0.1",
     "@formkit/addons": "^0.17.3",
     "@formkit/vue": "^0.17.2",
+    "@tailwindcss/typography": "^0.5.9",
     "astro": "^3.0.2",
     "sharp": "^0.32.1",
     "tailwindcss": "^3.3.2",
