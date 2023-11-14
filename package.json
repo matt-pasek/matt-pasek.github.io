@@ -24,7 +24,7 @@
     "@formkit/addons": "^0.17.3",
     "@formkit/vue": "^0.17.2",
     "@tailwindcss/typography": "^0.5.9",
-    "astro": "^3.0.2",
+    "astro": "^3.5.4",
     "sharp": "^0.32.1",
     "tailwindcss": "^3.3.2",
     "typed.js": "^2.0.16",
