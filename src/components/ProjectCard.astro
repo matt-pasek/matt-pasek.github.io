@@ -5,7 +5,7 @@ interface Props {
   full?: boolean;
 }
 
-import Link from './icons/Link.astro';
+import { Link1 } from 'iconsax-astro'
 import '@fontsource/oxygen/400.css';
  
 const { project, full } = Astro.props;
@@ -21,6 +21,6 @@ const { project, full } = Astro.props;
             {full && <p class="font-nunito text-xs text-accent">{project.data.stack.join(' - ')}</p>}
             {!full && <a href=`/projects/${project.data.codename}` class="font-nunito font-semibold text-xs text-accent">Learn more</a>}
         </div>
-        {project.data.link && <a href={project.data.link}><button class="icon"><Link /></button></a>}
+        {project.data.link && <a href={project.data.link}><button class="icon"><Link1 type="linear" size={22} color="currentColor" class="text-accent" /></button></a>}
     </div>
 </div>
