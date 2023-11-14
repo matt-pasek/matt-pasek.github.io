@@ -1,5 +1,5 @@
 <template>
-  <h1 class="text-xl lg:text-2xl text-center md:text-left text-color leading-tight">
+  <h1 class="text-center text-xl leading-tight text-color md:text-left lg:text-2xl">
     Hey! I'm <span class="font-medium text-accent">Matt</span>, a <br />
     <span id="change-text" class="font-semibold"></span>
   </h1>
